@@ -1,0 +1,2 @@
+# aimode
+AI Mode Switcher
