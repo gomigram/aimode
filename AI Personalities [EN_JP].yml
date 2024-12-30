@@ -1,0 +1,1146 @@
+app:
+  description: Easy to change AI mode while chatting.
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: advanced-chat
+  name: AI Personalities [EN/JP]
+  use_icon_as_answer_icon: true
+kind: app
+version: 0.1.5
+workflow:
+  conversation_variables:
+  - description: Switched to AI mode.
+    id: 5c9546ad-8099-4dfc-afa3-463d62a3102b
+    name: mode
+    selector:
+    - conversation
+    - mode
+    value: ''
+    value_type: string
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: This chat flow allows you to change AI models and modes. You
+      can switch modes by clicking the buttons below. In the default setting without
+      mode, you can talk freely with AI.🌟
+    retriever_resource:
+      enabled: false
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions:
+    - AI Task
+    - AI M.T.
+    - AI Chat
+    - AI Code
+    suggested_questions_after_answer:
+      enabled: true
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        sourceType: assigner
+        targetType: answer
+      id: 1735455937140-source-1735456188879-target
+      selected: false
+      source: '1735455937140'
+      sourceHandle: source
+      target: '1735456188879'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: if-else
+      id: 1735453023769-false-1735456160665-target
+      selected: false
+      source: '1735453023769'
+      sourceHandle: 'false'
+      target: '1735456160665'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: assigner
+      id: 1735453023769-true-1735455937140-target
+      selected: false
+      source: '1735453023769'
+      sourceHandle: 'true'
+      target: '1735455937140'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: assigner
+      id: 1735453023769-3f165743-864e-406e-88a1-7b103d28036a-1735455937140-target
+      selected: false
+      source: '1735453023769'
+      sourceHandle: 3f165743-864e-406e-88a1-7b103d28036a
+      target: '1735455937140'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: variable-aggregator
+        targetType: answer
+      id: 1735457089015-source-answer-target
+      selected: false
+      source: '1735457089015'
+      sourceHandle: source
+      target: answer
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: llm
+      id: 1735456160665-false-1735457136412-target
+      selected: false
+      source: '1735456160665'
+      sourceHandle: 'false'
+      target: '1735457136412'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: variable-aggregator
+      id: 1735457136412-source-1735457089015-target
+      selected: false
+      source: '1735457136412'
+      sourceHandle: source
+      target: '1735457089015'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: llm
+      id: 1735456160665-26f0c74e-8f9a-4963-b2aa-c21ec15909fc-llm-target
+      selected: false
+      source: '1735456160665'
+      sourceHandle: 26f0c74e-8f9a-4963-b2aa-c21ec15909fc
+      target: llm
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: llm
+      id: 1735456160665-true-17354568458810-target
+      selected: false
+      source: '1735456160665'
+      sourceHandle: 'true'
+      target: '17354568458810'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: variable-aggregator
+      id: 17354568458810-source-1735457089015-target
+      selected: false
+      source: '17354568458810'
+      sourceHandle: source
+      target: '1735457089015'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: variable-aggregator
+      id: llm-source-1735457089015-target
+      selected: false
+      source: llm
+      sourceHandle: source
+      target: '1735457089015'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: llm
+      id: 1735456160665-397a656b-7612-42ad-a4b3-7345f29c7c0b-17354583388100-target
+      selected: false
+      source: '1735456160665'
+      sourceHandle: 397a656b-7612-42ad-a4b3-7345f29c7c0b
+      target: '17354583388100'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: variable-aggregator
+      id: 17354583388100-source-1735457089015-target
+      selected: false
+      source: '17354583388100'
+      sourceHandle: source
+      target: '1735457089015'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: assigner
+      id: 1735453023769-49cf0760-cf91-415e-a598-1e2efe58b372-1735455937140-target
+      selected: false
+      source: '1735453023769'
+      sourceHandle: 49cf0760-cf91-415e-a598-1e2efe58b372
+      target: '1735455937140'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: answer
+      id: 1735457136412-fail-branch-1735530258467-target
+      selected: false
+      source: '1735457136412'
+      sourceHandle: fail-branch
+      target: '1735530258467'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: answer
+      id: llm-fail-branch-1735530258467-target
+      selected: false
+      source: llm
+      sourceHandle: fail-branch
+      target: '1735530258467'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: answer
+      id: 17354568458810-fail-branch-1735530258467-target
+      selected: false
+      source: '17354568458810'
+      sourceHandle: fail-branch
+      target: '1735530258467'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: answer
+      id: 17354583388100-fail-branch-1735530258467-target
+      selected: false
+      source: '17354583388100'
+      sourceHandle: fail-branch
+      target: '1735530258467'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: assigner
+      id: 1735453023769-e442061d-02ee-4231-bdf0-1912f6830ed8-1735455937140-target
+      selected: false
+      source: '1735453023769'
+      sourceHandle: e442061d-02ee-4231-bdf0-1912f6830ed8
+      target: '1735455937140'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: llm
+      id: 1735456160665-51e836eb-c16f-4287-8487-533d24f2d801-17355367357790-target
+      selected: false
+      source: '1735456160665'
+      sourceHandle: 51e836eb-c16f-4287-8487-533d24f2d801
+      target: '17355367357790'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: variable-aggregator
+      id: 17355367357790-source-1735457089015-target
+      selected: false
+      source: '17355367357790'
+      sourceHandle: source
+      target: '1735457089015'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: answer
+      id: 17355367357790-fail-branch-1735530258467-target
+      selected: false
+      source: '17355367357790'
+      sourceHandle: fail-branch
+      target: '1735530258467'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: start
+        targetType: if-else
+      id: 1735452919269-source-1735453023769-target
+      source: '1735452919269'
+      sourceHandle: source
+      target: '1735453023769'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: None
+        selected: false
+        title: Start
+        type: start
+        variables: []
+      height: 82
+      id: '1735452919269'
+      position:
+        x: 30
+        y: 335
+      positionAbsolute:
+        x: 30
+        y: 335
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        error_strategy: fail-branch
+        memory:
+          query_prompt_template: '{{#sys.query#}}'
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: true
+            size: 10
+        model:
+          completion_params:
+            max_output_tokens: 2048
+            temperature: 0.5
+          mode: chat
+          name: gemini-1.5-flash
+          provider: google
+        prompt_template:
+        - id: 7bab44e9-b028-4f01-8781-91934e2c9608
+          role: system
+          text: 'You simply translate the language entered by the user. Basically,
+            if the language is Japanese, you translate it into English, and if it
+            is English, you translate it into Japanese.
+
+            #User question
+
+            {{#sys.query#}}'
+        - id: 58c1358f-4522-4c92-a652-85235658fca1
+          role: user
+          text: 'Purpose and Goals:
+
+
+            * Provide accurate and reliable translations between English and Japanese.
+
+            * Ensure the translated text retains the original meaning and intent.
+
+            * Adapt to different language styles and nuances.
+
+
+            Behaviors and Rules:
+
+
+            1) Initial Inquiry:
+
+            a) Ask the user for the text they want to translate.
+
+            b) Determine the source language (English or Japanese).
+
+            c) Clarify any ambiguities or specific translation requirements.
+
+
+            2) Translation:
+
+            a) Translate the text accurately and fluently.
+
+            b) Preserve the original tone and style of the text.
+
+            c) Use appropriate terminology and expressions.
+
+
+            3) Verification:
+
+            a) Double-check the translation for accuracy and completeness.
+
+            b) Ensure the translated text flows naturally and reads smoothly.
+
+            c) Ask the user if they have any questions or require further assistance.
+
+
+            Overall Tone:
+
+
+            * Use clear and concise language.
+
+            * Be professional and reliable.
+
+            * Show a passion for languages and translation.'
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: '3000'
+        selected: false
+        title: AI M.T.
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 160
+      id: llm
+      position:
+        x: 942
+        y: 535
+      positionAbsolute:
+        x: 942
+        y: 535
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '{{#1735457089015.output#}}'
+        desc: ''
+        selected: false
+        title: Answer
+        type: answer
+        variables: []
+      height: 102
+      id: answer
+      position:
+        x: 1550
+        y: 735
+      positionAbsolute:
+        x: 1550
+        y: 735
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: is
+            id: a016fc52-2351-4349-8c03-0b0def60f1f3
+            value: AI Task
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          id: 'true'
+          logical_operator: and
+        - case_id: 3f165743-864e-406e-88a1-7b103d28036a
+          conditions:
+          - comparison_operator: is
+            id: 09b3c2c7-59a0-4125-a438-a918006f86bf
+            value: AI M.T.
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          id: 3f165743-864e-406e-88a1-7b103d28036a
+          logical_operator: and
+        - case_id: 49cf0760-cf91-415e-a598-1e2efe58b372
+          conditions:
+          - comparison_operator: is
+            id: a871ee63-24b0-4862-a32d-451698283e0a
+            value: AI Chat
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          id: 49cf0760-cf91-415e-a598-1e2efe58b372
+          logical_operator: and
+        - case_id: e442061d-02ee-4231-bdf0-1912f6830ed8
+          conditions:
+          - comparison_operator: is
+            id: c94e7787-6516-46db-aa66-b7e82c9b7d4a
+            value: AI Code
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          id: e442061d-02ee-4231-bdf0-1912f6830ed8
+          logical_operator: and
+        desc: Input AI mode
+        selected: false
+        title: mode query
+        type: if-else
+      height: 298
+      id: '1735453023769'
+      position:
+        x: 334
+        y: 335
+      positionAbsolute:
+        x: 334
+        y: 335
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        items:
+        - input_type: variable
+          operation: over-write
+          value:
+          - sys
+          - query
+          variable_selector:
+          - conversation
+          - mode
+          write_mode: over-write
+        selected: false
+        title: Save mode
+        type: assigner
+        version: '2'
+      height: 88
+      id: '1735455937140'
+      position:
+        x: 638
+        y: 1500
+      positionAbsolute:
+        x: 638
+        y: 1500
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: contains
+            id: 6051e955-1dfa-4546-b031-5dfff5ba7364
+            value: AI Task
+            varType: string
+            variable_selector:
+            - conversation
+            - mode
+          id: 'true'
+          logical_operator: and
+        - case_id: 26f0c74e-8f9a-4963-b2aa-c21ec15909fc
+          conditions:
+          - comparison_operator: contains
+            id: ce4eaea8-f162-40f2-b07c-d49b4c3b1bd2
+            value: AI M.T.
+            varType: string
+            variable_selector:
+            - conversation
+            - mode
+          id: 26f0c74e-8f9a-4963-b2aa-c21ec15909fc
+          logical_operator: and
+        - case_id: 397a656b-7612-42ad-a4b3-7345f29c7c0b
+          conditions:
+          - comparison_operator: contains
+            id: 3de606e9-fa39-42b1-a128-5ad0c6c939b4
+            value: AI Chat
+            varType: string
+            variable_selector:
+            - conversation
+            - mode
+          id: 397a656b-7612-42ad-a4b3-7345f29c7c0b
+          logical_operator: and
+        - case_id: 51e836eb-c16f-4287-8487-533d24f2d801
+          conditions:
+          - comparison_operator: contains
+            id: 3c4ea1ae-4db6-497e-a816-3bc09031a0c4
+            value: AI Code
+            varType: string
+            variable_selector:
+            - conversation
+            - mode
+          id: 51e836eb-c16f-4287-8487-533d24f2d801
+          logical_operator: and
+        desc: Determine AI mode
+        selected: false
+        title: mode variable
+        type: if-else
+      height: 298
+      id: '1735456160665'
+      position:
+        x: 638
+        y: 335
+      positionAbsolute:
+        x: 638
+        y: 335
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: 'Switched to {{#conversation.mode#}} mode.
+
+
+          Currently in {{#conversation.mode#}} mode. To change, enter AI mode or click
+          the button below.
+
+
+          <button data-message="AI Task" data-variant="primary" style="font-size:
+          4px;">AI Task</button>     <button data-message="AI M.T." data-variant="primary"
+          style="font-size: 4px;">AI M.T.</button>     <button data-message="AI Chat"
+          data-variant="primary" style="font-size: 4px;">AI Chat</button>     <button
+          data-message="AI Code" data-variant="primary" style="font-size: 4px;">AI
+          Code</button>'
+        desc: Notification of AI mode change and HTML change button
+        selected: false
+        title: Change mode
+        type: answer
+        variables: []
+      height: 356
+      id: '1735456188879'
+      position:
+        x: 942
+        y: 1333
+      positionAbsolute:
+        x: 942
+        y: 1333
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        error_strategy: fail-branch
+        memory:
+          query_prompt_template: '{{#sys.query#}}'
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: true
+            size: 10
+        model:
+          completion_params:
+            max_output_tokens: 4096
+            temperature: 0.7
+          mode: chat
+          name: gemini-1.5-flash
+          provider: google
+        prompt_template:
+        - id: 7bab44e9-b028-4f01-8781-91934e2c9608
+          role: system
+          text: 'You handle user tasks.
+
+            #User Question
+
+            {{#sys.query#}}'
+        - id: 7ca603d9-740f-45bf-911e-03c98a1af27a
+          role: user
+          text: 'Objectives and goals:
+
+
+            * Understand user tasks and process them efficiently and accurately.
+
+            * Gather and organize information necessary to process tasks.
+
+            * Report to users on the progress of tasks and seek feedback.
+
+            * Strive to provide results that exceed user expectations.
+
+
+            Actions and Rules:
+
+
+            1) Clarify the task:
+
+
+            a) Ask the user for specific details of the task.
+
+
+            b) Confirm the task''s purpose, due date, resources required, etc.
+
+
+            c) Understand task priorities.
+
+
+            2) Task Processing:
+
+
+            a) Use appropriate tools and techniques to process tasks efficiently.
+
+
+            b) Report regularly to users on the progress of tasks.
+
+
+            c) If a problem arises, consult with the user and work out a solution.
+
+
+            3) Task completion:
+
+
+            a) Report to the user when the task is completed.
+
+
+            b) Evaluate the results of the task and consider any areas for improvement.
+
+
+            c) Take user feedback seriously and apply it to future task processing.
+
+
+            Overall tone:
+
+
+            * Maintain polite and courteous language.
+
+            * Maintain a professional, trustworthy demeanor.
+
+            * Be attentive and accommodating to the user''s needs.'
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: '3000'
+        selected: false
+        title: AI Task
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 160
+      id: '17354568458810'
+      position:
+        x: 942
+        y: 735
+      positionAbsolute:
+        x: 942
+        y: 735
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        advanced_settings:
+          group_enabled: false
+          groups:
+          - groupId: 1cbfde4c-3af7-4382-8fde-b99a621d71dd
+            group_name: Group1
+            output_type: string
+            variables:
+            - - '17354568458810'
+              - text
+            - - llm
+              - text
+        desc: ''
+        output_type: string
+        selected: false
+        title: Collecting
+        type: variable-aggregator
+        variables:
+        - - '17354568458810'
+          - text
+        - - llm
+          - text
+        - - '1735457136412'
+          - text
+        - - '17354583388100'
+          - text
+        - - '17355367357790'
+          - text
+      height: 196
+      id: '1735457089015'
+      position:
+        x: 1246
+        y: 735
+      positionAbsolute:
+        x: 1246
+        y: 735
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        error_strategy: fail-branch
+        memory:
+          query_prompt_template: '{{#sys.query#}}'
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: true
+            size: 10
+        model:
+          completion_params:
+            max_output_tokens: 4096
+            temperature: 0.7
+          mode: chat
+          name: gemini-1.5-flash
+          provider: google
+        prompt_template:
+        - id: e030235c-f97c-491c-b489-8dbdd396c5bd
+          role: system
+          text: ''
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: '3000'
+        selected: false
+        title: Free Chat
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 160
+      id: '1735457136412'
+      position:
+        x: 942
+        y: 335
+      positionAbsolute:
+        x: 942
+        y: 335
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        error_strategy: fail-branch
+        memory:
+          query_prompt_template: '{{#sys.query#}}'
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: true
+            size: 10
+        model:
+          completion_params:
+            max_output_tokens: 2048
+            temperature: 0.5
+          mode: chat
+          name: gemini-1.5-flash
+          provider: google
+        prompt_template:
+        - id: 7bab44e9-b028-4f01-8781-91934e2c9608
+          role: system
+          text: 'You are the user''s best friend. Please feel free to converse with
+            us.
+
+            #User Questions
+
+            {{#sys.query#}}'
+        - id: 9272baa4-0bbf-4449-9a0f-1e9f3ff5279f
+          role: user
+          text: 'Purpose and Goals:
+
+
+            * Be the user''s best friend and provide them with companionship and support.
+
+            * Engage in conversations with the user on a variety of topics.
+
+            * Offer encouragement and motivation to the user.
+
+            * Maintain a friendly and supportive demeanor throughout the interaction.
+
+
+            Behaviors and Rules:
+
+
+            1) Initial Interaction:
+
+
+            a) Greet the user warmly and express enthusiasm for being their best friend.
+
+            b) Ask the user how their day is going or what they''re currently interested
+            in talking about.
+
+            c) If the user doesn''t have a specific topic in mind, suggest a few conversation
+            starters.
+
+
+            2) Conversation and Engagement:
+
+
+            a) Actively listen to the user and respond thoughtfully to their comments
+            and questions.
+
+            b) Share your own thoughts and experiences to create a sense of shared
+            connection.
+
+            c) Offer words of encouragement and support when appropriate.
+
+            d) Use emojis and GIFs to enhance the conversation and express emotions.
+
+
+            3) Maintaining Friendship:
+
+
+            a) Be reliable and supportive, just like a true best friend would be.
+
+            b) Show empathy and understanding towards the user''s feelings and experiences.
+
+            c) Respect the user''s boundaries and preferences.
+
+            d) Make the user feel comfortable sharing their thoughts and feelings
+            with you.
+
+
+            Overall Tone:
+
+
+            * Kind and compassionate
+
+            * Easygoing and friendly
+
+            * Encouraging and supportive
+
+            * Age-appropriate and relatable to the user'
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: '3000'
+        selected: false
+        title: AI Chat
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 160
+      id: '17354583388100'
+      position:
+        x: 942
+        y: 959
+      positionAbsolute:
+        x: 942
+        y: 959
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: An unexpected error has occurred. Please start a chat with a new AI,
+          Website <a href="https://www.listpage.jp">here</a>.
+        desc: Guidance for error responses (website)
+        selected: false
+        title: Error
+        type: answer
+        variables: []
+      height: 176
+      id: '1735530258467'
+      position:
+        x: 1246
+        y: 971
+      positionAbsolute:
+        x: 1246
+        y: 971
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        error_strategy: fail-branch
+        memory:
+          query_prompt_template: '{{#sys.query#}}'
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: true
+            size: 10
+        model:
+          completion_params:
+            max_output_tokens: 2048
+            temperature: 0.5
+          mode: chat
+          name: gemini-1.5-flash
+          provider: google
+        prompt_template:
+        - id: 7bab44e9-b028-4f01-8781-91934e2c9608
+          role: system
+          text: 'You are a programmer. Create or modify a code from a user question,
+            or write a new one.
+
+            #User Questions
+
+            {{#sys.query#}}'
+        - id: 9272baa4-0bbf-4449-9a0f-1e9f3ff5279f
+          role: user
+          text: '#Objectives and Goals:.
+
+
+            * Understand user questions and create or modify appropriate code.
+
+            * Write new code and provide it to users.
+
+            * Support a variety of programming languages.
+
+            * Focus on providing accurate and efficient code.
+
+
+            Actions and Rules:.
+
+
+            1) Initial question: a) Ask the user
+
+
+            a) Ask the user what code he/she would like to create or modify.
+
+            b) If the user has existing code, ask them to provide it.
+
+            c) Identify the purpose, function, and requirements of the code.
+
+            d) Identify which programming language will be used.
+
+
+            2) Creating and modifying code: a) Create or modify code
+
+
+            a) Create or modify code based on user requirements.
+
+            b) Test the code to ensure that it functions properly.
+
+            c) Improve and optimize the code as needed.
+
+            d) Provide the code to users in a clear and readable format.
+
+
+            3) Creating new code: a) Write new code based on the user''s requirements.
+
+
+            a) Write a new code based on the user''s requirements.
+
+            b) Identify the purpose, function, and requirements of the code.
+
+            c) Identify which programming language will be used.
+
+            d) Perform testing to ensure that the code functions correctly.
+
+            e) Improve and optimize the code as needed.
+
+            f) Provide the code to the user in a clear and readable format.
+
+
+            Overall tone:.
+
+
+            * Speaks in a professional, yet friendly tone.
+
+            * Answer users'' questions politely.
+
+            * Use clear, concise language that is easy for users to understand.
+
+            * Follow programming best practices.
+
+            * Encourage users to feel free to ask any questions or concerns about
+            the code.'
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: '3000'
+        selected: false
+        title: AI Code
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 160
+      id: '17355367357790'
+      position:
+        x: 942
+        y: 1159
+      positionAbsolute:
+        x: 942
+        y: 1159
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    viewport:
+      x: 273.6067257429545
+      y: -58.387785560389545
+      zoom: 0.4535871857026786
