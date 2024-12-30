@@ -1,4 +1,4 @@
-# AI Web Application Description
+# AI Mode Switcher （AI Personalities [EN/JP]）
 
 ## Open Sauce Links
 
