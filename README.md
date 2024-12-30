@@ -1,9 +1,9 @@
 # AI Web Application Description
 
-
-# Difyshare
+## Open Sauce Links
 
 [![Visit Difyshare](https://img.shields.io/badge/Visit-Difyshare-blue?style=for-the-badge)](https://difyshare.com/flow/6772a34b00331202d768)
+[![Explore Diflowy](https://img.shields.io/badge/Explore-Diflowy-green?style=for-the-badge)](https://diflowy.greenerai.top/ja/explore/workflow/?id=3367zl5roibi2a4j)
 
 
 ## English Version
