@@ -1,6 +1,11 @@
 # AI Web Application Description
 
 
+# Difyshare
+
+[![Visit Difyshare](https://img.shields.io/badge/Visit-Difyshare-blue?style=for-the-badge)](https://difyshare.com/flow/6772a34b00331202d768)
+
+
 ## English Version
 
 ### **Inspiration**
